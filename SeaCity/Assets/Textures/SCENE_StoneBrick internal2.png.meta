@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 02b98aac5ed1649d0b560f412571c527
+guid: ecfd9a81b5b0c0a41bf8301d4339e0ba
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SCENE_StoneBrick_0
-    21300002: SCENE_StoneBrick_1
-    21300004: SCENE_StoneBrick_2
-    21300006: SCENE_StoneBrick_3
-    21300008: SCENE_StoneBrick_4
-    21300010: SCENE_StoneBrick_5
-    21300012: SCENE_StoneBrick_6
-    21300014: SCENE_StoneBrick_7
-    21300016: SCENE_StoneBrick_8
+    21300000: SCENE_StoneBrick internal2_0
+    21300002: SCENE_StoneBrick internal2_1
+    21300004: SCENE_StoneBrick internal2_2
+    21300006: SCENE_StoneBrick internal2_3
+    21300008: SCENE_StoneBrick internal2_4
+    21300010: SCENE_StoneBrick internal2_5
+    21300012: SCENE_StoneBrick internal2_6
+    21300014: SCENE_StoneBrick internal2_7
+    21300016: SCENE_StoneBrick internal2_8
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -89,28 +89,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SCENE_StoneBrick_0
+      name: SCENE_StoneBrick internal2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 143.33334
-        width: 89
-        height: 71.666664
+        y: 83.33333
+        width: 41
+        height: 41.666668
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,19 +107,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 539c17bc0f7694a7a99434911a3f9ae2
+      spriteID: 5f234bb1a2c6f0f45bbe5da93b35e18f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SCENE_StoneBrick_1
+      name: SCENE_StoneBrick internal2_1
       rect:
         serializedVersion: 2
-        x: 89
-        y: 143.33334
-        width: 89
-        height: 71.666664
+        x: 41
+        y: 83.33333
+        width: 41
+        height: 41.666668
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,19 +127,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c80b7a0625cd84699825f48e11c035b6
+      spriteID: 8fa7ccfc98dd9a048b5273d0fb2ac01c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SCENE_StoneBrick_2
+      name: SCENE_StoneBrick internal2_2
       rect:
         serializedVersion: 2
-        x: 178
-        y: 143.33334
-        width: 89
-        height: 71.666664
+        x: 82
+        y: 83.33333
+        width: 41
+        height: 41.666668
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,79 +147,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8dccc46842034395bda440a2737c616
+      spriteID: 22bca059af922d0438b2d3899f0a0288
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SCENE_StoneBrick_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 72.333336
-        width: 89
-        height: 71.666664
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 400acfaef6382457eb7fd1965d5d097b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SCENE_StoneBrick_4
-      rect:
-        serializedVersion: 2
-        x: 89
-        y: 72.333336
-        width: 89
-        height: 71.666664
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4d1982e2734b40989d741c7fea2657a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SCENE_StoneBrick_5
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 72.333336
-        width: 89
-        height: 71.666664
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 691bcc1a53f70450a9ed95d8076b3377
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SCENE_StoneBrick_6
+      name: SCENE_StoneBrick internal2_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 1.3333359
-        width: 89
-        height: 71.666664
+        y: 42.333332
+        width: 41
+        height: 41.666668
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,19 +167,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 330178536405d41b7a9e93739e1c854e
+      spriteID: 0ef9699072d5cae4ab67df3b2ecd8500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SCENE_StoneBrick_7
+      name: SCENE_StoneBrick internal2_4
       rect:
         serializedVersion: 2
-        x: 89
-        y: 1.3333359
-        width: 89
-        height: 71.666664
+        x: 41
+        y: 42.333332
+        width: 41
+        height: 41.666668
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 930ed02abba06496bb601be45cb1ba71
+      spriteID: 32eb40e83a091884ba0294332112afea
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SCENE_StoneBrick_8
+      name: SCENE_StoneBrick internal2_5
       rect:
         serializedVersion: 2
-        x: 178
-        y: 1.3333359
-        width: 89
-        height: 71.666664
+        x: 82
+        y: 42.333332
+        width: 41
+        height: 41.666668
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,7 +207,67 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfeda5f699eca47a18e8b775a3f42cd9
+      spriteID: faeae91a2ffe73b4197fdaf2a912c57f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SCENE_StoneBrick internal2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333321
+        width: 41
+        height: 41.666668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14952fb814a09884ba2262161f90c272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SCENE_StoneBrick internal2_7
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1.3333321
+        width: 41
+        height: 41.666668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaed4bd14f9ef6b4381c5351611a2152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SCENE_StoneBrick internal2_8
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1.3333321
+        width: 41
+        height: 41.666668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c5a366ec940a534e9cd913ab8d6032a
       vertices: []
       indices: 
       edges: []
@@ -286,7 +275,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0050b2e35b70a458f891ce04ce09239e
+    spriteID: 3af1124a6aa970d42abe62f46a0f7e1e
     vertices: []
     indices: 
     edges: []
