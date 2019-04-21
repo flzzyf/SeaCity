@@ -1,0 +1,268 @@
+fileFormatVersion: 2
+guid: abb9029b76177164fb1f40ffbdcabbc3
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Player_Clamb
+    21300002: GIRL_climb_01 (1)
+    21300004: GIRL_climb_01 (2)
+    21300006: GIRL_climb_01 (3)
+    21300008: GIRL_climb_01 (4)
+    21300010: GIRL_climb_01 (5)
+    21300012: GIRL_climb_01 (6)
+    21300014: GIRL_climb_01 (7)
+    21300016: GIRL_climb_01 (8)
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GIRL_climb_01 (1)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 76
+        width: 29
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5862069, y: -1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca27c3cd100e8b4fb38efe616d121e3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GIRL_climb_01 (2)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 23
+        width: 29
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5862069, y: -0.9607843}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b575a1dbd19b8b47836f6f349fbee88
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GIRL_climb_01 (3)
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 76
+        width: 29
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5862069, y: -0.9019608}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a72227d688c8f294d867c92797f7dfa7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GIRL_climb_01 (4)
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 23
+        width: 29
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5862069, y: -0.8235294}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf919c3a186abdb4b84738b3e12274ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GIRL_climb_01 (5)
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 76
+        width: 29
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5862069, y: -0.7058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f121acced2eb80c42a30ac015855cd80
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GIRL_climb_01 (6)
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 76
+        width: 29
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5862069, y: -0.5686275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f96a0731156fa468b512f128a62b89
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GIRL_climb_01 (7)
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 23
+        width: 29
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5862069, y: -0.3529412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 846530bd750adf3468f78d198b190cb9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GIRL_climb_01 (8)
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 23
+        width: 29
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5862069, y: -0.15686275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ba70d0217137ae428e22cd2e696a61c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 35127021a50ffad48b2da7e44e5f4bff
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
