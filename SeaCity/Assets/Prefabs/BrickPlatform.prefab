@@ -50,7 +50,7 @@ SpriteShapeRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4cd45373a62237f42af49aa7cc43dd2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -68,24 +68,16 @@ SpriteShapeRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1708371821
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
   m_Sprites:
-  - {fileID: 21300000, guid: 7f59906acb8bc7a4d9e824457854ef5e, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: c79788bd8c41e55408c1b594f5fc2d19, type: 3}
   m_LocalAABB:
-    m_Center: {x: 0.22263622, y: 1.8178431, z: -0.0005}
-    m_Extent: {x: 2.8738303, y: 0.5202273, z: 0.0005}
+    m_Center: {x: 0.23930252, y: 1.8179611, z: -0.0005}
+    m_Extent: {x: 3.440483, y: 0.5242232, z: 0.0005}
 --- !u!114 &7462734531990478583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +131,7 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
   - {x: 3.61659, y: 1.32176}
