@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isCrouching;
 
     PlayerInput playerInput;
+	Player player;
     Rigidbody2D rb;
 
     public float crouchColliderMultiplier = .5f;
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+		player = GetComponent<Player>();
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         bodyCollider = GetComponent<BoxCollider2D>();
@@ -52,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         MidAirMovement();
     }
 
+	//物理检查
     void PhysicsCheck()
     {
         isOnGround = false;
@@ -66,13 +69,27 @@ public class PlayerMovement : MonoBehaviour
 
     void GroundMovement()
     {
-        //趴下时移动则站立
+		//播放动画
+		if (playerInput.horizontal == 0)
+		{
+			player.animator.SetBool("walking", false);
+		}
+		else
+			player.animator.SetBool("walking", true);
 
-        float velocityX = speed * playerInput.horizontal;
 
-        rb.velocity = new Vector2(velocityX, rb.velocity.y);
+		//趴下时移动则站立
 
-    }
+		float velocityX = speed * playerInput.horizontal;
+
+
+		rb.velocity = new Vector2(velocityX, rb.velocity.y);
+
+		//改变朝向
+		if (velocityX * facing < 0f)
+			Flip();
+
+	}
 
     void MidAirMovement()
     {
@@ -95,7 +112,23 @@ public class PlayerMovement : MonoBehaviour
         return hit;
     }
 
-    private void OnDrawGizmosSelected()
+	#region 角色朝向
+	//大于0朝右
+	float facing = -1;
+
+	//旋转朝向
+	void Flip()
+	{
+		facing *= -1;
+
+		Vector3 scale = transform.localScale;
+		scale.x *= -1;
+		transform.localScale = scale;
+	}
+
+	#endregion
+
+	private void OnDrawGizmosSelected()
     {
         //Gizmos.DrawLine(new Vector2(.3f, 0), new Vector2(.3f, 0) + Vector2.down * skinWidth);
     }

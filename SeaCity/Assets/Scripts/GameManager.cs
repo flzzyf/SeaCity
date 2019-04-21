@@ -12,9 +12,8 @@ public class GameManager : MonoBehaviour
         isGaming = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void Restart()
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+	}
 }
