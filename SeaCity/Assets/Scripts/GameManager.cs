@@ -14,6 +14,6 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+		SceneFader.instance.ReloadScene();
 	}
 }
