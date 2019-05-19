@@ -39,7 +39,7 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.isGaming)
+        if (GameManager.isPaused)
             return;
 
         if(readyToClearInput)

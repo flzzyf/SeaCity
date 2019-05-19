@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Panel_Settings : MonoBehaviour
+public class Panel_Settings : Panel
 {
-    public void Close()
-	{
-		gameObject.SetActive(false);
-	}
+
 }
