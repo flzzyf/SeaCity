@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour
+public class Monster : Character
 {
 	public float speed = 1f;
 
@@ -14,6 +14,9 @@ public class Monster : MonoBehaviour
 	public Transform target;
 
 	public bool facingRight;
+
+	public float eyeHeight = 1;
+	public float eyeSight = 3;
 
 	void Start()
 	{
@@ -30,12 +33,10 @@ public class Monster : MonoBehaviour
 
 		int moveDir = facingRight ? 1 : -1;
 
-		rb.velocity = new Vector2(moveDir * speed, rb.velocity.y);
+		if(!attacking)
+			rb.velocity = new Vector2(moveDir * speed, rb.velocity.y);
 
 		animator.SetFloat("Speed", 1);
-
-
-		
 
 		if(Input.GetKeyDown("z"))
 		{
@@ -46,61 +47,128 @@ public class Monster : MonoBehaviour
 		{
 			Death();
 		}
+
+		//搜索前方目标
+		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position + transform.up * eyeHeight, transform.right * moveDir, attackRange);
+		foreach (var item in hits)
+		{
+			if (item.collider.transform.parent != transform && item.collider.gameObject.tag == "Player")
+			{
+				Attack();
+			}
+		}
+
+		//攻击冷却
+		AttackCooling();
+
+		if(!WalkableForward())
+		{
+			Flip();
+		}
 	}
 
 	void Flip()
 	{
-		gfx.flipX = !gfx.flipX;
+		Vector3 scale = transform.localScale;
+		scale.x *= -1;
+		transform.localScale = scale;
 
 		facingRight = !facingRight;
 	}
 
+	#region 攻击
+	public int damage = 1;
+
+	public float cooldown = 1;
+	float currentCooldown;
+
+	public float attackRange = 1f;
+
+	public bool canAttack { get { return currentCooldown <= 0; } }
+
+	//攻击中
+	bool attacking;
+
 	void Attack()
 	{
+		if(canAttack)
+		{
+			currentCooldown = cooldown;
+		}
+		else
+		{
+			return;
+		}
+
+		attacking = true;
+
 		animator.SetTrigger("Attack");
 	}
 
 	public void AttackAnimEvent()
 	{
-
-	}
-
-	#region 生命值
-	public int hpMax = 5;
-	int hpCurrent;
-
-	void InitHp()
-	{
-		SetHp(hpMax);
-	}
-
-	void SetHp(int amount)
-	{
-		hpCurrent = amount;
-	}
-	void ModifyHp(int amount)
-	{
-		hpCurrent += amount;
-
-		if (hpCurrent <= 0)
+		//搜索前方目标
+		int moveDir = facingRight ? 1 : -1;
+		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position + transform.up * eyeHeight, transform.right * moveDir, attackRange);
+		foreach (var item in hits)
 		{
-			Death();
+			if (item.collider.transform.parent != transform && item.collider.gameObject.tag == "Player")
+			{
+				item.collider.gameObject.GetComponent<Player>().TakeDamage(damage);
+			}
 		}
+
+		attacking = false;
 	}
 
-	void TakeDamage(int amount)
+	//攻击冷却
+	void AttackCooling()
 	{
-		ModifyHp(-amount);
+		currentCooldown -= Time.deltaTime;
 	}
 
-	void Death()
+	#endregion
+
+	public override void Death()
 	{
+		base.Death();
+
 		animator.SetTrigger("Death");
 	}
 
-	public void DieAnimEvent()
+	public float pathFinder_x;
+	public float pathFinder_length = 1f;
+
+	bool WalkableForward()
 	{
-		Destroy(gameObject);
+		bool walkable = false;
+		//判断前方地面
+		int moveDir = facingRight ? 1 : -1;
+		foreach (var item in Physics2D.RaycastAll(transform.position + transform.right * pathFinder_x * moveDir + transform.up * .1f, -transform.up, pathFinder_length))
+		{
+			if (item.collider.transform.parent != transform && item.collider.gameObject.tag == "Ground")
+			{
+				walkable = true;
+				break;
+			}
+		}
+
+		//判断前方墙壁
+		foreach (var item in Physics2D.RaycastAll(transform.position + transform.right * pathFinder_x * moveDir + transform.up * 1, transform.right * moveDir, pathFinder_length))
+		{
+			if (item.collider.transform.parent != transform && item.collider.gameObject.tag == "Ground")
+			{
+				walkable = false;
+				break;
+			}
+		}
+
+		return walkable;
 	}
-	#endregion
+
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.DrawLine(transform.position + transform.up * eyeHeight,
+			transform.position + transform.up * eyeHeight + transform.right * attackRange);
+	}
 }
