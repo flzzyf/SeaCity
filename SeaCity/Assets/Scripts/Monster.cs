@@ -13,28 +13,32 @@ public class Monster : Character
 
 	public Transform target;
 
-	public bool facingRight;
 
 	public float eyeHeight = 1;
 	public float eyeSight = 3;
 
-	void Start()
+	protected override void Start()
 	{
+		base.Start();
+
 		animator = gfx.GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
 
 		InitHp();
 	}
 
-	void Update()
+	protected override void Update()
 	{
+		base.Update();
+
+		if (!isOnGround)
+			return;
+
 		//如果没有目标就朝前走，前面没路就转头，看到玩家就设为目标并攻击
 		//有目标则朝目标方向移动，除非没路
 
-		int moveDir = facingRight ? 1 : -1;
-
 		if(!attacking)
-			rb.velocity = new Vector2(moveDir * speed, rb.velocity.y);
+			rb.velocity = new Vector2(facingDir * speed, rb.velocity.y);
 
 		animator.SetFloat("Speed", 1);
 
@@ -49,7 +53,7 @@ public class Monster : Character
 		}
 
 		//搜索前方目标
-		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position + transform.up * eyeHeight, transform.right * moveDir, attackRange);
+		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position + transform.up * eyeHeight, transform.right * facingDir, attackRange);
 		foreach (var item in hits)
 		{
 			if (item.collider.transform.parent != transform && item.collider.gameObject.tag == "Player")
@@ -67,14 +71,6 @@ public class Monster : Character
 		}
 	}
 
-	void Flip()
-	{
-		Vector3 scale = transform.localScale;
-		scale.x *= -1;
-		transform.localScale = scale;
-
-		facingRight = !facingRight;
-	}
 
 	#region 攻击
 	public int damage = 1;
@@ -108,13 +104,15 @@ public class Monster : Character
 	public void AttackAnimEvent()
 	{
 		//搜索前方目标
-		int moveDir = facingRight ? 1 : -1;
-		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position + transform.up * eyeHeight, transform.right * moveDir, attackRange);
+		int facingDir = facingRight ? 1 : -1;
+		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position + transform.up * eyeHeight, transform.right * facingDir, attackRange);
 		foreach (var item in hits)
 		{
 			if (item.collider.transform.parent != transform && item.collider.gameObject.tag == "Player")
 			{
-				item.collider.gameObject.GetComponent<Player>().TakeDamage(damage);
+				item.collider.gameObject.GetComponent<Character>().TakeDamage(damage);
+
+				Utils.Push(item.collider.GetComponent<Rigidbody2D>(), new Vector2(facingDir, 0.2f).normalized, 8);
 			}
 		}
 
@@ -143,8 +141,7 @@ public class Monster : Character
 	{
 		bool walkable = false;
 		//判断前方地面
-		int moveDir = facingRight ? 1 : -1;
-		foreach (var item in Physics2D.RaycastAll(transform.position + transform.right * pathFinder_x * moveDir + transform.up * .1f, -transform.up, pathFinder_length))
+		foreach (var item in Physics2D.RaycastAll(transform.position + transform.right * pathFinder_x * facingDir + transform.up * .1f, -transform.up, pathFinder_length))
 		{
 			if (item.collider.transform.parent != transform && item.collider.gameObject.tag == "Ground")
 			{
@@ -154,7 +151,7 @@ public class Monster : Character
 		}
 
 		//判断前方墙壁
-		foreach (var item in Physics2D.RaycastAll(transform.position + transform.right * pathFinder_x * moveDir + transform.up * 1, transform.right * moveDir, pathFinder_length))
+		foreach (var item in Physics2D.RaycastAll(transform.position + transform.right * pathFinder_x * facingDir + transform.up * 1, transform.right * facingDir, pathFinder_length))
 		{
 			if (item.collider.transform.parent != transform && item.collider.gameObject.tag == "Ground")
 			{

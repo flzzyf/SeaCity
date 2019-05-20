@@ -8,8 +8,10 @@ public class Player : Character
 
 	public Panel_GameOver panel_GameOver;
 
-	private void Start()
+	protected override void Start()
 	{
+		base.Start();
+
 		InitHp();
 	}
 

@@ -11,19 +11,19 @@ public class PlayerInput : MonoBehaviour
     [HideInInspector] public bool jumpHeld;
     [HideInInspector] public bool crouchPressed;
     [HideInInspector] public bool crouchHeld;
+	[HideInInspector] public bool attackPressed;
     //准备重置输入
     bool readyToClearInput;
 
     void ProcessInput()
     {
-        horizontal += Input.GetAxis("Horizontal");
-        horizontal = Mathf.Clamp(horizontal, -1f, 1f);
+        horizontal = Input.GetAxisRaw("Horizontal");
 
         jumpPressed = jumpPressed || Input.GetButtonDown("Jump");
         jumpHeld = jumpHeld || Input.GetButton("Jump");
         crouchPressed = crouchPressed || Input.GetButtonDown("Crouch");
         crouchHeld = crouchHeld || Input.GetButton("Crouch");
-
+		attackPressed = Input.GetButtonDown("Fire1");
     }
 
     void ClearInput()
